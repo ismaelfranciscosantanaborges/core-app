@@ -1,4 +1,4 @@
-import 'package:record_result/src/errors/failure.dart';
+import '../src/errors/failure.dart';
 
 /// A [Result] is a type that represents either a success or a [Failure].
 ///
