@@ -18,6 +18,7 @@ abstract class UseCaseNoParams<Type> {
   Type call();
 }
 
+
 abstract class UseCaseStream<Type, Params>
     implements _UseCase<Stream<Type>, Params> {
   @override

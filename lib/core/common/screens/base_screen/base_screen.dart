@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 
 abstract class BaseScreen extends StatefulWidget {
   const BaseScreen({required this.bindings, super.key});
-  final BaseBinding bindings;
+  final BaseBindings bindings;
 
   Widget build(BuildContext context);
 

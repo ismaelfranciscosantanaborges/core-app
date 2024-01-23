@@ -1,7 +1,15 @@
 library core_app;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'core/abstractions/index.dart';
+export 'core/bindings/base_binding.dart';
+export 'core/common/index.dart';
+export 'core/enums/status_code.dart';
+export 'core/errors/index.dart';
+export 'core/extensions/context_extension.dart';
+export 'core/models/index.dart';
+export 'core/routers/navigation_fade_transition.dart';
+export 'core/usecases/usecases_base.dart';
+export 'core/utils/typedefs.dart';
+export 'package:record_result/record_result.dart';
+
+
