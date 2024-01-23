@@ -10,6 +10,6 @@ export 'core/models/index.dart';
 export 'core/routers/navigation_fade_transition.dart';
 export 'core/usecases/usecases_base.dart';
 export 'core/utils/typedefs.dart';
-export 'package:record_result/record_result.dart';
+export 'record_result/lib/record_result.dart';
 
 
