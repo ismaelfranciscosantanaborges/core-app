@@ -1,22 +1,27 @@
 import 'package:core_app/core/bindings/base_binding.dart';
 import 'package:flutter/widgets.dart';
+import 'package:bloc/bloc.dart';
 
-abstract class BaseScreen extends StatefulWidget {
-  const BaseScreen({required this.bindings, super.key});
+abstract class BaseScreen<T extends Cubit> extends StatefulWidget {
+  BaseScreen({required this.bindings, super.key});
   final BaseBindings bindings;
-
+  late T cubit;
   Widget build(BuildContext context);
 
   @override
-  State<BaseScreen> createState() => _BaseScreenState();
+  State<BaseScreen> createState() => _BaseScreenState<T>();
 }
 
-class _BaseScreenState extends State<BaseScreen> {
+class _BaseScreenState<T extends Cubit> extends State<BaseScreen> {
+
   @override
-  void initState() { 
+  void initState() {
     try {
       final bindings = widget.bindings.dependecies();
-      bindings.forEach((e) => e.register());
+      bindings.forEach((e) {
+        final instnace = e.register();
+        if (instnace is T) widget.cubit = instnace; 
+      });
     } catch (e) {
       print(e);
     }

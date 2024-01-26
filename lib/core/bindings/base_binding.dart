@@ -5,6 +5,6 @@ abstract class BaseBindings {
 abstract class BaseObjectBindings<T extends Object> {
   BaseObjectBindings(this.instance);
   final T Function() instance;
-  void register();
+  T? register();
   void unregister();
 }
