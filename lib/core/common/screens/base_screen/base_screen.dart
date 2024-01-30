@@ -13,14 +13,13 @@ abstract class BaseScreen<T extends Cubit> extends StatefulWidget {
 }
 
 class _BaseScreenState<T extends Cubit> extends State<BaseScreen> {
-
   @override
   void initState() {
     try {
       final bindings = widget.bindings.dependecies();
       bindings.forEach((e) {
         final instnace = e.register();
-        if (instnace is T) widget.cubit = instnace; 
+        if (instnace is T) widget.cubit = instnace;
       });
     } catch (e) {
       print(e);
@@ -31,8 +30,13 @@ class _BaseScreenState<T extends Cubit> extends State<BaseScreen> {
 
   @override
   void dispose() {
-    widget.bindings.dependecies().map((e) => e.unregister());
+    _dispose();
     super.dispose();
+  }
+
+  Future _dispose() async {
+    final bindings = widget.bindings.dependecies();
+    Future.wait([...bindings.map((e) => e.unregister())]);
   }
 
   @override
