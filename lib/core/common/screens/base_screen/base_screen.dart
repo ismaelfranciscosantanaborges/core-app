@@ -7,7 +7,7 @@ abstract class BaseScreen<T extends Cubit> extends StatefulWidget {
   final BaseBindings bindings;
   late T cubit;
   Widget build(BuildContext context);
-
+  void loaded() {}
   @override
   State<BaseScreen> createState() => _BaseScreenState<T>();
 }
@@ -24,7 +24,7 @@ class _BaseScreenState<T extends Cubit> extends State<BaseScreen> {
     } catch (e) {
       print(e);
     }
-
+    widget.loaded();
     super.initState();
   }
 
