@@ -8,6 +8,7 @@ abstract class BaseScreen<T extends Cubit> extends StatefulWidget {
   late T cubit;
   Widget build(BuildContext context);
   void loaded() {}
+  void dispose(){}
   @override
   State<BaseScreen> createState() => _BaseScreenState<T>();
 }
@@ -30,6 +31,7 @@ class _BaseScreenState<T extends Cubit> extends State<BaseScreen> {
 
   @override
   void dispose() {
+    widget.dispose();
     _dispose();
     super.dispose();
   }
