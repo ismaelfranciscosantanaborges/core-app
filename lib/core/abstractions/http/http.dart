@@ -1,5 +1,4 @@
-
-
+import 'package:core_app/core/abstractions/http/kresponse_type.dart';
 import 'package:core_app/core/abstractions/http/models/k_http_response.dart';
 import 'package:core_app/core/utils/typedefs.dart';
 
@@ -10,6 +9,7 @@ abstract class Http {
     Map<String, dynamic>? queryParameters,
     DataMap? headers,
     void Function(int, int)? onReceiveProgress,
+    KResponseType? responseType,
   });
 
   Future<KHttpResponse<T>> post<T>(

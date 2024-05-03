@@ -1,4 +1,5 @@
 import 'package:core_app/core/abstractions/http/http.dart';
+import 'package:core_app/core/abstractions/http/kresponse_type.dart';
 import 'package:core_app/core/abstractions/http/models/k_http_response.dart';
 import 'package:core_app/core/utils/typedefs.dart';
 import 'package:dio/dio.dart';
@@ -30,14 +31,16 @@ class HttpDio implements Http {
     DataMap? queryParameters,
     DataMap? headers,
     void Function(int, int)? onReceiveProgress,
-    ResponseType? responseType,
+    KResponseType? responseType,
   }) async {
     final result = await _dio.get<T>(
       path,
       queryParameters: queryParameters,
       options: Options(
         headers: headers,
-        responseType: responseType,
+        responseType: ResponseType.values
+            .where((element) => element.name == responseType?.name)
+            .firstOrNull,
       ),
       data: data,
       onReceiveProgress: onReceiveProgress,
