@@ -30,11 +30,15 @@ class HttpDio implements Http {
     DataMap? queryParameters,
     DataMap? headers,
     void Function(int, int)? onReceiveProgress,
+    ResponseType? responseType,
   }) async {
     final result = await _dio.get<T>(
       path,
       queryParameters: queryParameters,
-      options: Options(headers: headers),
+      options: Options(
+        headers: headers,
+        responseType: responseType,
+      ),
       data: data,
       onReceiveProgress: onReceiveProgress,
     );
