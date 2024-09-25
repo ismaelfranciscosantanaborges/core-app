@@ -8,4 +8,5 @@ import '../../record_result/lib/record_result.dart';
 typedef DataMap = Map<String, dynamic>;
 typedef ResultPagination<T> = FutureRecordResult<Response<Pagination<T>>>;
 typedef Result<T> = FutureRecordResult<Response<T>>;
+typedef LocalResult<T> = RecordResult<T>;
 typedef FutureResponse<T> = FutureRecordResult<Response<T>>;
