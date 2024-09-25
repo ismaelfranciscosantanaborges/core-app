@@ -1,5 +1,5 @@
 abstract class BaseBindings {
-  List<BaseObjectBindings> dependecies();
+  List<BaseObjectBindings> dependencies();
 }
 
 abstract class BaseObjectBindings<T extends Object> {
