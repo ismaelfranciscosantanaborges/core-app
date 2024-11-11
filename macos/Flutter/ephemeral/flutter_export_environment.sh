@@ -1,6 +1,6 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=/Users/ismaelfsb/fvm/versions/3.19.5"
+export "FLUTTER_ROOT=/Users/ismaelfsb/fvm/versions/3.24.3"
 export "FLUTTER_APPLICATION_PATH=/Users/ismaelfsb/Desktop/Projects/Flutter/SOLVEX_PROJECTS/core_app"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_BUILD_DIR=build"
