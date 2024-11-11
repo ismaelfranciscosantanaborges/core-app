@@ -36,4 +36,13 @@ abstract class Http {
     DataMap? queryParameters,
     DataMap? headers,
   });
+
+  Future<KHttpResponse<T>> patch<T>(
+    String path, {
+    Object? data,
+    DataMap? queryParameters,
+    DataMap? headers,
+    void Function(int, int)? onSendProgress,
+    void Function(int, int)? onReceiveProgress,
+  });
 }

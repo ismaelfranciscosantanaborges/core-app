@@ -96,4 +96,24 @@ class HttpDio implements Http {
       extra: result.extra,
     );
   }
+
+  @override
+  Future<KHttpResponse<T>> patch<T>(
+    String path, {
+    Object? data,
+    DataMap? queryParameters,
+    DataMap? headers,
+    void Function(int p1, int p2)? onSendProgress,
+    void Function(int p1, int p2)? onReceiveProgress,
+  }) async {
+    final result = await _dio.patch<T>(
+      path,
+      queryParameters: queryParameters,
+      options: Options(headers: headers),
+      data: data,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+    return _response(result);
+  }
 }

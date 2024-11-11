@@ -4,8 +4,8 @@ import 'package:equatable/equatable.dart';
 class Response<T> extends Equatable {
   const Response({
     required this.statusCode,
-    required this.message,
     required this.data,
+    this.message,
   });
 
   final StatusCode statusCode;
