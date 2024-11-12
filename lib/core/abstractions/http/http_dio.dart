@@ -116,4 +116,9 @@ class HttpDio implements Http {
     );
     return _response(result);
   }
+
+  @override
+  void setAuthorization(String token) {
+    _dio.options.headers['Authorization'] = token;
+  }
 }

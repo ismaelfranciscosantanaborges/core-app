@@ -45,4 +45,6 @@ abstract class Http {
     void Function(int, int)? onSendProgress,
     void Function(int, int)? onReceiveProgress,
   });
+
+  void setAuthorization(String token);
 }
