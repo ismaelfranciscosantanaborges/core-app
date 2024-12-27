@@ -118,7 +118,7 @@ class HttpDio implements Http {
   }
 
   @override
-  void setAuthorization(String token) {
-    _dio.options.headers['Authorization'] = token;
+  void setGlobalHeader(String key, String token) {
+    _dio.options.headers[key] = token;
   }
 }
