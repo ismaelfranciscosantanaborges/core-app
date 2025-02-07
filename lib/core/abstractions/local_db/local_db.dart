@@ -6,4 +6,5 @@ abstract interface class LocalDB {
   Future<void> set<T>(String key, T data);
   Future<void> setSecure(String key, String value);
   Future<String?> getSecure(String key);
+  Future<void> remove(String key);
 }
