@@ -55,4 +55,14 @@ class LocalDBImpl implements LocalDB {
   Future<String?> getSecure(String key) async {
     return await _secureStorage.read(key: key);
   }
+
+  @override
+  Future<void> remove(String key) async {
+    try {
+      await Future.wait(
+        [_preferences.remove(key), _secureStorage.delete(key: key)],
+      );
+    } catch (e) {}
+    return;
+  }
 }
